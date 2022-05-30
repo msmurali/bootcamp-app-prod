@@ -6,10 +6,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "dist/bootcamp-app")));
 app.set("view engine", "pug");
 
-app.get("/port", (req, res) => {
-  res.send({ message: process.env.PORT });
-});
-
 app.get("/", (_, res) => {
   res.status(200).sendFile("index.html", {
     root: path.join(__dirname, "dist/bootcamp-app"),
